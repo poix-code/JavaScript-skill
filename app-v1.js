@@ -30,11 +30,18 @@ class Celphone {
   recording() {
     alert(`Recording video on a resolution: ${this.cameraResolution}`);
   }
+  mobileInfo() {
+    return `
+    Color: <b>${this.color}</b></br>
+    Weight: <b>${this.weight}</b></br>
+    Size: <b>${this.screenResolution}</b></br>
+    Camera resolution: <b>${this.cameraResolution}</b></br>
+    Video resolution: <b>${this.cameraResolution}</b></br>
+    RAM: <b>${this.memoryRam}</b></br>
+    `;
+  }
 }
 
 const cellphone1 = new Celphone("red", "6gr", "6'", "20mpx", "2GB");
-cellphone1.celState();
-cellphone1.takePicture();
-cellphone1.recording();
-cellphone1.restart();
-cellphone1.celState();
+
+document.write(`${cellphone1.mobileInfo()}`);
