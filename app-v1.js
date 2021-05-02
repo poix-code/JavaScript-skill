@@ -1,4 +1,4 @@
-class Celphone {
+class Cellphone {
   constructor(color, weight, sr, cr, ram) {
     this.color = color;
     this.weight = weight;
@@ -42,6 +42,22 @@ class Celphone {
   }
 }
 
-const cellphone1 = new Celphone("red", "6gr", "6'", "20mpx", "2GB");
+class lastGenCell extends Cellphone{
+  constructor(color, weight, sr, cr, ram, exc) {
+    super(color, weight, sr, cr, ram);
+    this.extraCameraRes = exc;
+  }
+  slowMoVideo() {
+    alert("Slow Motion video activated");
+  }
+  facialRecognition() {
+    alert("Initializing facial recognition");
+  }
+  mobileGenInfo() {
+    return this.mobileInfo() + `Camera extra res: <b>${this.extraCameraRes}</b>`
+  }
+}
 
-document.write(`${cellphone1.mobileInfo()}`);
+const cellphone1 = new lastGenCell("red", "6gr", "6'", "20mpx", "2GB", "Full HD");
+
+document.write(`${cellphone1.mobileGenInfo()}`);
